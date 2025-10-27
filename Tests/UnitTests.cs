@@ -43,7 +43,7 @@ public class Subtraction
     public void Subtract_Invalid()
     {
         Assert.ThrowsException<FormatException>(() => Program.Subtract("3", "a"));
-        Assert.ThrowsException<FormatException>(() => Program.Subtract("a", "1"));
+        Assert.ThrowsException<FormatException>(() => Program.Subtract("a", "3"));
     }
 
     [TestMethod]
@@ -101,6 +101,7 @@ public class Division
     [TestMethod]
     public void Divide_ByZero()
     {
+        // Now this matches the fixed Divide method that throws DivideByZeroException
         Assert.ThrowsException<DivideByZeroException>(() => Program.Divide("5", "0"));
     }
 
